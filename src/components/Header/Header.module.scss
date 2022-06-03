@@ -1,0 +1,21 @@
+.header{
+    width: 100%;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: row;
+}
+.box1{
+    background-color: #e6b505;
+    flex-grow: 1;
+    p{
+        font-weight: bold;
+        padding-left: 15px;
+    }
+}
+.box2{
+    flex-grow: 3;
+    p{
+        padding-left: 15px;
+        color: #919191;
+    }
+}
