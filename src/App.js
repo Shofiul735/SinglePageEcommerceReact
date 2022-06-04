@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 
 import Header from "./components/Header/Header";
+import MainPage from './components/MainPage/MainPage';
 
 const App = (props) => {
     fetch(
@@ -12,6 +13,7 @@ const App = (props) => {
     return (
         <Fragment>
             <Header />
+            <MainPage />
         </Fragment>
     );
 };
