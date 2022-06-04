@@ -14,7 +14,7 @@ const gallerySlice = createSlice({
             state.images = action.payload.images;
         },
         replaceDisplayImage(state,action){
-            state.displayImageLink = state.images[action.payload];
+            state.displayImageLink = state.images[action.payload].url;
         }
     }, 
 });
