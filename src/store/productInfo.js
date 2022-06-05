@@ -49,6 +49,11 @@ const slice = createSlice({
         },
         updateSelectedColor(state, action) {
             state.selectedColor = action.payload;
+            state.availability = checkAvailability(
+                "size",
+                state.colors[action.payload.index].id,
+                state.skus,
+            );
         },
     },
 });
