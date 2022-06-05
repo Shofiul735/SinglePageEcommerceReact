@@ -37,7 +37,7 @@ const slice = createSlice({
             state.colors = action.payload.colors;
             state.sizes = action.payload.sizes;
             state.skus = action.payload.skus;
-            state.availability = checkAvailability(['size',action.payload.colors[0].id],action.payload.skus);
+            state.availability = checkAvailability('size',action.payload.colors[0].id,action.payload.skus);
         }
     }
 });
