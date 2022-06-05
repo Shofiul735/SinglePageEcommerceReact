@@ -18,6 +18,12 @@ const ProductInfo = (props) => {
             <h2 className={classes['old-price']}> Rs.{price.old}</h2>
             <h2 className={classes.discount}> ({price.totalDiscount.toFixed(2)}% OFF)</h2>
         </div>
+        <div className={classes['color-section']}>
+            <p>Color: <span>Balck</span></p>
+            <div className={classes['color-variety']}>
+
+            </div>
+        </div>
     </div>
 }
 

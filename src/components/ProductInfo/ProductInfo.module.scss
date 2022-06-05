@@ -32,4 +32,25 @@
             color: #ff7700;
         }
     }
+
+    .color-section{
+        background-color: white;
+        padding: 5px;
+        p{
+           color: #9d9c9b; 
+           span{
+               color: #212121;
+               font-weight: bold;
+           }
+        }
+        .color-variety{
+            height: 100px;
+            margin-bottom: 20px;
+            overflow-y: scroll;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
 }
