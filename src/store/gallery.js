@@ -1,22 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    displayImageLink: '',
-    images: []
-,}
+    displayImageLink: "",
+    images: [],
+};
 
 const gallerySlice = createSlice({
-    name: 'Gallery',
+    name: "Gallery",
     initialState,
     reducers: {
-        populateData( state,action){
+        populateData(state, action) {
             state.displayImageLink = action.payload.displayLink;
             state.images = action.payload.images;
         },
-        replaceDisplayImage(state,action){
+        replaceDisplayImage(state, action) {
+            if (action.payload.type === "color") {
+                state.displayImageLink = action.payload.url;
+                return;
+            }
             state.displayImageLink = state.images[action.payload].url;
-        }
-    }, 
+        },
+    },
 });
 
 export const { populateData, replaceDisplayImage } = gallerySlice.actions;
