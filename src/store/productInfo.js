@@ -16,3 +16,10 @@ const initialState = {
     },
 }
 
+const slice = createSlice({
+    name: 'ProductInfo',
+    initialState,
+    reducers:{
+        
+    }
+});
