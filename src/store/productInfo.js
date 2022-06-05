@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    title:'',
-    price:{
+    title: "",
+    price: {
         new: 0,
         old: 0,
         totalDiscount: 0,
@@ -10,37 +10,48 @@ const initialState = {
     colors: [],
     sizes: [],
     skus: [],
-    availability:{
-        indicator: 'size',
+    availability: {
+        indicator: "size",
         avaiable: [],
     },
-}
+    selectedColor: {
+        name: "Select a color",
+        index: -1,
+    },
+};
 
-const checkAvailability= (indicator,id,skus) => {
-    const result= {};
+const checkAvailability = (indicator, id, skus) => {
+    const result = {};
     result.indicator = indicator;
-    if(indicator === 'size'){
-        result.avaiable = skus.map(item => item.props[0] == id);
-    }else{
-        result.avaiable = skus.map(item => item.props[1] == id);
+    if (indicator === "size") {
+        result.avaiable = skus.map((item) => item.props[0] == id);
+    } else {
+        result.avaiable = skus.map((item) => item.props[1] == id);
     }
     return result;
-}
+};
 
 const slice = createSlice({
-    name: 'ProductInfo',
+    name: "ProductInfo",
     initialState,
-    reducers:{
-        populateProductInfo(state,action){
+    reducers: {
+        populateProductInfo(state, action) {
             state.title = action.payload.title;
             state.price = action.payload.price;
             state.colors = action.payload.colors;
             state.sizes = action.payload.sizes;
             state.skus = action.payload.skus;
-            state.availability = checkAvailability('size',action.payload.colors[0].id,action.payload.skus);
-        }
-    }
+            state.availability = checkAvailability(
+                "size",
+                action.payload.colors[0].id,
+                action.payload.skus
+            );
+        },
+        updateSelectedColor(state, action) {
+            state.selectedColor = action.payload;
+        },
+    },
 });
 
-export const {populateProductInfo} = slice.actions;
+export const { populateProductInfo, updateSelectedColor } = slice.actions;
 export default slice.reducer;
