@@ -41,3 +41,6 @@ const slice = createSlice({
         }
     }
 });
+
+export const {populateProductInfo} = slice.actions;
+export default slice.reducer;
