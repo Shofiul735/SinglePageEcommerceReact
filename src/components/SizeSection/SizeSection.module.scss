@@ -1,0 +1,19 @@
+.size-section{
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 20px;
+    p{
+       color: #9d9c9b; 
+       span{
+           color: #212121;
+           font-weight: bold;
+       }
+    }
+    .size-variety{
+        height: 80px;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
