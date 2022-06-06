@@ -12,7 +12,7 @@ const initialState = {
     skus: [],
     availability: {
         indicator: "size",
-        avaiable: [],
+        avaiable: {},
     },
     selectedColor: {
         name: "Select a color",
@@ -24,9 +24,15 @@ const checkAvailability = (indicator, id, skus) => {
     const result = {};
     result.indicator = indicator;
     if (indicator === "nothing") {
-        result.avaiable = skus.map((item) => true);
+        for (let item of skus) {
+            result[item.props[1]] = true;
+        }
     } else {
-        result.avaiable = skus.map((item) => item.props[0] == id);
+        for (let item of skus) {
+            if (item.props[0] == id) {
+                result[item.props[1]] = true;
+            }
+        }
     }
     return result;
 };
@@ -52,7 +58,7 @@ const slice = createSlice({
             state.availability = checkAvailability(
                 "size",
                 state.colors[action.payload.index].id,
-                state.skus,
+                state.skus
             );
         },
     },
