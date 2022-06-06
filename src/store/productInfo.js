@@ -17,7 +17,13 @@ const initialState = {
     selectedColor: {
         name: "Select a color",
         index: -1,
+        id: 0,
     },
+    selectedSize: {
+        name: 'Select a size',
+        index: -1,
+        id: 0,
+    }
 };
 
 const checkAvailability = (indicator, id, skus) => {
