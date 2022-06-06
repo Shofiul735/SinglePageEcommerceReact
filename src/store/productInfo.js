@@ -67,8 +67,11 @@ const slice = createSlice({
                 state.skus
             );
         },
+        updateSelectedSize(state,action){
+            state.selectedSize = action.payload;
+        }
     },
 });
 
-export const { populateProductInfo, updateSelectedColor } = slice.actions;
+export const { populateProductInfo, updateSelectedColor, updateSelectedSize } = slice.actions;
 export default slice.reducer;
