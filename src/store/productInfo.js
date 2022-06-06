@@ -23,10 +23,10 @@ const initialState = {
 const checkAvailability = (indicator, id, skus) => {
     const result = {};
     result.indicator = indicator;
-    if (indicator === "size") {
-        result.avaiable = skus.map((item) => item.props[0] == id);
+    if (indicator === "nothing") {
+        result.avaiable = skus.map((item) => true);
     } else {
-        result.avaiable = skus.map((item) => item.props[1] == id);
+        result.avaiable = skus.map((item) => item.props[0] == id);
     }
     return result;
 };
@@ -42,7 +42,7 @@ const slice = createSlice({
             state.sizes = action.payload.sizes;
             state.skus = action.payload.skus;
             state.availability = checkAvailability(
-                "size",
+                "nothing",
                 action.payload.colors[0].id,
                 action.payload.skus
             );
