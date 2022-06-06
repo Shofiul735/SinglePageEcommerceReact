@@ -1,0 +1,15 @@
+.color-button{
+    height: 75px;
+    margin-right: 10px;
+    cursor: pointer;
+
+    &:disabled{
+        cursor: not-allowed;
+
+        .color-img{
+            filter: blur(3px);
+        }
+    }
+}
+.active{
+    border: 2px solid #ff7700;
