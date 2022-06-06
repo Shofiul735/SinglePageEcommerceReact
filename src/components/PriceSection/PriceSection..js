@@ -11,7 +11,7 @@ const PriceSection = (props) => {
             <h2 className={classes["new-price"]}> Rs.{price.new}</h2>
             <h2 className={classes["old-price"]}> Rs.{price.old}</h2>
             <h2 className={classes.discount}>
-                ({price.totalDiscount.toFixed(2)}% OFF)
+                ({price.totalDiscount.toFixed(0)}% OFF)
             </h2>
         </div>
     );
