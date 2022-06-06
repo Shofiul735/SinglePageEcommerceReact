@@ -7,8 +7,19 @@ import { populateProductInfo } from "./store/productInfo";
 import Header from "./components/Header/Header";
 import MainPage from "./components/MainPage/MainPage";
 
+import './App.css';
+
 const App = (props) => {
     const dispatch = useDispatch();
+
+    if(window.innerWidth < 550){
+        return (<div className="mobile">
+            <p>
+                Please use a laptop or desktop to view the webpage!, this page is not for mobile user.
+            </p>
+        </div>);
+    }
+
     useEffect(() => {
         fetch(
             "https://moveon-api-server.sbox.ali2bd.net/api/v1/customer/dummy-product"
