@@ -1,0 +1,19 @@
+.price-section{
+    margin: 20px 0;
+    padding: 0 5px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+
+    .new-price{
+        color: #212121;
+    }
+    .old-price{
+        color: #9d9c9b;
+        text-decoration: line-through;
+    }
+    .discount{
+        color: #ff7700;
+    }
+}
