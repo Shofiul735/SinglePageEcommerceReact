@@ -17,6 +17,7 @@ const AvailableColors = (props) => {
         const newColor = {
             name: colors[index].name,
             index: index,
+            id: colors[index].id,
         };
 
         dispatch(
