@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import AvailableColors from "../AvailableColor/AvailableColors";
 import PriceSection from "../PriceSection/PriceSection.";
