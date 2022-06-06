@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 
 import AvailableColors from "../AvailableColor/AvailableColors";
 import PriceSection from "../PriceSection/PriceSection.";
+import SizeSection from "../SizeSection/SizeSection";
 
 import classes from "./ProductInfo.module.scss";
 
@@ -16,6 +17,7 @@ const ProductInfo = (props) => {
             <p className={classes["title"]}>{title}</p>
             <PriceSection />
             <AvailableColors />
+            <SizeSection /> 
         </div>
     );
 };
