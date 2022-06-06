@@ -12,8 +12,13 @@ const SizeSection = (props) => {
     const availability = useSelector((state) => state.product.availability);
     const skus = useSelector((state) => state.product.skus);
     const colorId = useSelector((state) => state.product.selectedColor.id);
+    const selectedSize = useSelector((state) => state.product.selectedSize);
 
     const sizeSelectionHandler = (index) => {
+        if(colorId === 0){
+            alert('Please select a color first!');
+            return;
+        }
         const selectedSize = {
             id: sizes[index].id,
             name: sizes[index].name,
@@ -36,6 +41,7 @@ const SizeSection = (props) => {
             <SizeButton
                 key={index}
                 size={item.name}
+                active= {index === selectedSize.index}
                 onClick={() => sizeSelectionHandler(index)}
                 disabled={availability[item.id] === true ? false : true}
             />
@@ -45,7 +51,7 @@ const SizeSection = (props) => {
     return (
         <div className={classes["size-section"]}>
             <p>
-                Size: <span>{5}</span>
+                Size: <span>{selectedSize.name}</span>
             </p>
             <div className={classes["size-variety"]}>{sizeButtons}</div>
         </div>
