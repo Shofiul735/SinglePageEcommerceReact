@@ -37,8 +37,6 @@ const App = (props) => {
 
                 dispatch(populateProductInfo(productData));
                 dispatch(populateData(galleryData));
-                console.log("App.js--21");
-                console.log(data);
             });
     }, []);
 
