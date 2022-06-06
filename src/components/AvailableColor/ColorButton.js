@@ -8,7 +8,7 @@ const AvailableColor = (props) => {
     }
     
     return (
-        <button disabled={!props.isAvailable} className={className.join(' ')} onClick={props.onClick}>
+        <button className={className.join(' ')} onClick={props.onClick}>
             <img src={props.src} className={classes['color-img']} alt="thumb"/>
         </button>
     );

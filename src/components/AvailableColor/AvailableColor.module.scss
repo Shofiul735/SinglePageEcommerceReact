@@ -1,16 +1,19 @@
-.color-button{
-    height: 75px;
-    margin-right: 10px;
-    cursor: pointer;
-
-    &:disabled{
-        cursor: not-allowed;
-
-        .color-img{
-            filter: blur(3px);
-        }
+.color-section{
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 20px;
+    p{
+       color: #9d9c9b; 
+       span{
+           color: #212121;
+           font-weight: bold;
+       }
     }
-}
-.active{
-    border: 2px solid #ff7700;
+    .color-variety{
+        height: 80px;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }
