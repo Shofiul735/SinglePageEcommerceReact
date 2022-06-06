@@ -20,10 +20,10 @@ const initialState = {
         id: 0,
     },
     selectedSize: {
-        name: 'Select a size',
+        name: "Select a size",
         index: -1,
         id: 0,
-    }
+    },
 };
 
 const checkAvailability = (indicator, id, skus) => {
@@ -67,11 +67,27 @@ const slice = createSlice({
                 state.skus
             );
         },
-        updateSelectedSize(state,action){
+        updateSelectedSize(state, action) {
             state.selectedSize = action.payload;
-        }
+        },
+        updatePrice(state, action) {
+            const result = {
+                new: action.payload.new,
+                old: action.payload.old,
+                totalDiscount:
+                    (Math.abs(action.payload.new - action.payload.old) /
+                        action.payload.old) *
+                    100,
+            };
+            state.price = result;
+        },
     },
 });
 
-export const { populateProductInfo, updateSelectedColor, updateSelectedSize } = slice.actions;
+export const {
+    populateProductInfo,
+    updateSelectedColor,
+    updateSelectedSize,
+    updatePrice,
+} = slice.actions;
 export default slice.reducer;
